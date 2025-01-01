@@ -13,7 +13,8 @@ class User(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "email": self.email
+            "email": self.email,
+            "is_active":self.is_active
         }
 
 # Tabla de Personajes
@@ -25,7 +26,7 @@ class People(db.Model):
     birth_year = db.Column(db.String(20))
     height = db.Column(db.String(20))
     mass = db.Column(db.String(20))
-    eye_color = db.Column(db.String(20))
+    homeworld = db.Column(db.String(100))
 
     def serialize(self):
         return {
@@ -35,7 +36,7 @@ class People(db.Model):
             "birth_year": self.birth_year,
             "height": self.height,
             "mass": self.mass,
-            "eye_color": self.eye_color
+            "homeworld": self.homeworld
         }
 
 # Tabla de Planetas
